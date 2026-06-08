@@ -87,7 +87,7 @@ export default function HomeScreen() {
 
       const pickerResult = await ImagePicker.launchImageLibraryAsync({
         mediaTypes: 'images',
-        allowsEditing: false,
+        allowsEditing: true,
         quality: 1,
       });
 
@@ -112,7 +112,7 @@ export default function HomeScreen() {
 
       const cameraResult = await ImagePicker.launchCameraAsync({
         mediaTypes: 'images',
-        allowsEditing: false,
+        allowsEditing: true,
         quality: 1,
       });
 
@@ -192,10 +192,8 @@ export default function HomeScreen() {
         <ScrollView contentContainerStyle={styles.scrollContainer} showsVerticalScrollIndicator={false}>
           {/* Header */}
           <View style={styles.header}>
-            <ThemedText type="subtitle" style={styles.headerTitle}>
-              Nova <Text style={{ color: '#0a84ff' }}>OCR</Text>
-            </ThemedText>
-            <ThemedText type="small" style={[styles.headerSubtitle, { color: theme.textSecondary }]}>
+            <Image source={require('@/assets/novalogo.png')} style={styles.logo} contentFit="contain" />
+            <ThemedText type="small" style={[styles.headerSubtitle, { color: theme.textSecondary, marginTop: Spacing.two }]}>
               Transform printed characters into machine-readable text instantly.
             </ThemedText>
           </View>
@@ -302,14 +300,16 @@ export default function HomeScreen() {
               </View>
             </View>
           ) : (
-            <View style={[styles.imagePreviewContainer, { borderColor: theme.backgroundSelected }]}>
-              {/* Corner brackets */}
-              <View style={[styles.corner, styles.topLeft, { borderColor: '#0a84ff' }]} />
-              <View style={[styles.corner, styles.topRight, { borderColor: '#0a84ff' }]} />
-              <View style={[styles.corner, styles.bottomLeft, { borderColor: '#0a84ff' }]} />
-              <View style={[styles.corner, styles.bottomRight, { borderColor: '#0a84ff' }]} />
+            <View style={styles.previewWrapper}>
+              <View style={[styles.imagePreviewContainer, { borderColor: theme.backgroundSelected }]}>
+                {/* Corner brackets */}
+                <View style={[styles.corner, styles.topLeft, { borderColor: '#0a84ff' }]} />
+                <View style={[styles.corner, styles.topRight, { borderColor: '#0a84ff' }]} />
+                <View style={[styles.corner, styles.bottomLeft, { borderColor: '#0a84ff' }]} />
+                <View style={[styles.corner, styles.bottomRight, { borderColor: '#0a84ff' }]} />
 
-              <Image source={{ uri: selectedImage }} style={styles.imagePreview} contentFit="contain" />
+                <Image source={{ uri: selectedImage }} style={styles.imagePreview} contentFit="contain" />
+              </View>
 
               {!isProcessing && !result && (
                 <View style={styles.previewControls}>
@@ -317,7 +317,7 @@ export default function HomeScreen() {
                     <Text style={styles.scanButtonText}>SCAN TEXT</Text>
                   </TouchableOpacity>
 
-                  <TouchableOpacity style={styles.cancelFloating} onPress={handleReset}>
+                  <TouchableOpacity style={[styles.cancelFloating, { backgroundColor: theme.backgroundElement }]} onPress={handleReset}>
                     <ResetIcon />
                   </TouchableOpacity>
                 </View>
@@ -585,12 +585,14 @@ const styles = StyleSheet.create({
     height: '100%',
   },
   previewControls: {
-    position: 'absolute',
-    bottom: Spacing.three,
-    left: Spacing.three,
-    right: Spacing.three,
     flexDirection: 'row',
-    gap: Spacing.two,
+    gap: Spacing.three,
+    marginTop: Spacing.three,
+    width: '100%',
+  },
+  previewWrapper: {
+    width: '100%',
+    alignItems: 'center',
   },
   scanButton: {
     flex: 1,
@@ -926,5 +928,11 @@ const styles = StyleSheet.create({
     left: 4,
     top: 7,
     borderRadius: 1.5,
+  },
+  logo: {
+    width: 180,
+    height: 180,
+    marginBottom: Spacing.one,
+    alignSelf: 'center',
   },
 });

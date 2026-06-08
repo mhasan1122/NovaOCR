@@ -153,11 +153,14 @@ export default function HistoryScreen() {
     <ThemedView style={styles.container}>
       <SafeAreaView style={styles.safeArea}>
         <View style={styles.headerRow}>
-          <View>
-            <ThemedText type="subtitle" style={styles.title}>Scan History</ThemedText>
-            <ThemedText type="small" themeColor="textSecondary">
-              Stored locally on your device ({historyList.length} scans)
-            </ThemedText>
+          <View style={{ flexDirection: 'row', alignItems: 'center', gap: Spacing.two }}>
+            <Image source={require('@/assets/novalogo.png')} style={styles.historyLogo} />
+            <View>
+              <ThemedText type="subtitle" style={styles.title}>Scan History</ThemedText>
+              <ThemedText type="small" themeColor="textSecondary">
+                Stored locally on your device ({historyList.length} scans)
+              </ThemedText>
+            </View>
           </View>
           {historyList.length > 0 && (
             <TouchableOpacity style={styles.clearBtn} onPress={clearAllHistory}>
@@ -312,5 +315,10 @@ const styles = StyleSheet.create({
     fontSize: 13,
     textAlign: 'center',
     paddingHorizontal: Spacing.four,
+  },
+  historyLogo: {
+    width: 44,
+    height: 44,
+    borderRadius: 10,
   },
 });
