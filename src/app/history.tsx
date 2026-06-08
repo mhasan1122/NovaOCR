@@ -218,7 +218,7 @@ const styles = StyleSheet.create({
   clearBtnText: {
     color: '#ff3b30',
     fontWeight: 'bold',
-    fontSize: 12,
+    fontSize: 13,
   },
   listContainer: {
     paddingHorizontal: Spacing.four,
@@ -256,15 +256,16 @@ const styles = StyleSheet.create({
     borderRadius: 6,
   },
   badgeText: {
-    fontSize: 9,
+    fontSize: 11,
+    fontWeight: '500',
   },
   textPreview: {
     borderRadius: 8,
     padding: Spacing.two,
   },
   previewText: {
-    fontSize: 12,
-    lineHeight: 18,
+    fontSize: 14,
+    lineHeight: 20,
     fontFamily: Platform.select({ ios: 'CourierNewPSMT', android: 'monospace', web: 'monospace' }),
   },
   cardActions: {
@@ -273,15 +274,15 @@ const styles = StyleSheet.create({
   },
   actionBtn: {
     flex: 1,
-    height: 36,
+    height: 48,
     borderWidth: 1,
     borderColor: '#3a3a3c',
-    borderRadius: 8,
+    borderRadius: 10,
     alignItems: 'center',
     justifyContent: 'center',
   },
   actionBtnText: {
-    fontSize: 11,
+    fontSize: 13,
     fontWeight: 'bold',
   },
   deleteBtn: {

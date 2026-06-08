@@ -514,16 +514,16 @@ const styles = StyleSheet.create({
     borderColor: '#3a3a3c',
   },
   langText: {
-    fontSize: 11,
+    fontSize: 13,
     fontWeight: 'bold',
   },
   toggleButton: {
     paddingHorizontal: Spacing.three,
-    paddingVertical: 6,
-    borderRadius: 6,
+    paddingVertical: 8,
+    borderRadius: 8,
     borderWidth: 1,
     borderColor: '#3a3a3c',
-    minWidth: 85,
+    minWidth: 95,
     alignItems: 'center',
   },
   toggleButtonActive: {
@@ -531,7 +531,7 @@ const styles = StyleSheet.create({
     borderColor: '#34c759',
   },
   toggleButtonText: {
-    fontSize: 10,
+    fontSize: 12,
     fontWeight: 'bold',
   },
   uploadCard: {
@@ -561,14 +561,14 @@ const styles = StyleSheet.create({
   },
   uploadButton: {
     flex: 1,
-    height: 90,
-    borderRadius: 12,
+    height: 110,
+    borderRadius: 14,
     alignItems: 'center',
     justifyContent: 'center',
     gap: Spacing.two,
   },
   uploadBtnText: {
-    fontSize: 13,
+    fontSize: 15,
   },
   imagePreviewContainer: {
     width: '100%',
@@ -595,8 +595,8 @@ const styles = StyleSheet.create({
   scanButton: {
     flex: 1,
     backgroundColor: '#0a84ff',
-    height: 48,
-    borderRadius: 10,
+    height: 56,
+    borderRadius: 12,
     alignItems: 'center',
     justifyContent: 'center',
     shadowColor: '#0a84ff',
@@ -608,13 +608,13 @@ const styles = StyleSheet.create({
   scanButtonText: {
     color: '#fff',
     fontWeight: 'bold',
-    fontSize: 14,
+    fontSize: 16,
     letterSpacing: 0.8,
   },
   cancelFloating: {
-    width: 48,
-    height: 48,
-    borderRadius: 10,
+    width: 56,
+    height: 56,
+    borderRadius: 12,
     backgroundColor: 'rgba(0, 0, 0, 0.75)',
     borderWidth: 1,
     borderColor: '#3a3a3c',
@@ -696,32 +696,32 @@ const styles = StyleSheet.create({
   actionButton: {
     flex: 1,
     flexDirection: 'row',
-    height: 38,
+    height: 48,
     borderWidth: 1,
     borderColor: '#3a3a3c',
-    borderRadius: 8,
+    borderRadius: 10,
     alignItems: 'center',
     justifyContent: 'center',
     gap: Spacing.two,
   },
   actionButtonText: {
-    fontSize: 11,
+    fontSize: 13,
     fontWeight: 'bold',
     letterSpacing: 0.5,
   },
   sectionTitle: {
-    fontSize: 14,
+    fontSize: 16,
     fontWeight: 'bold',
     marginBottom: Spacing.two,
   },
   resultTextContainer: {
-    height: 150,
-    borderRadius: 10,
+    height: 220,
+    borderRadius: 12,
     padding: Spacing.three,
   },
   resultText: {
-    fontSize: 14,
-    lineHeight: 22,
+    fontSize: 16,
+    lineHeight: 24,
   },
   wordCloud: {
     flexDirection: 'row',
@@ -738,11 +738,11 @@ const styles = StyleSheet.create({
     gap: 4,
   },
   wordBadgeText: {
-    fontSize: 11,
+    fontSize: 12,
     fontWeight: '500',
   },
   wordBadgeConfidence: {
-    fontSize: 9,
+    fontSize: 10,
     fontWeight: 'bold',
   },
 
