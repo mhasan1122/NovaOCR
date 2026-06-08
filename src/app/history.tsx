@@ -269,7 +269,6 @@ const styles = StyleSheet.create({
   previewText: {
     fontSize: 14,
     lineHeight: 20,
-    fontFamily: Platform.select({ ios: 'CourierNewPSMT', android: 'monospace', web: 'monospace' }),
   },
   cardActions: {
     flexDirection: 'row',

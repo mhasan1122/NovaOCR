@@ -216,7 +216,7 @@ export default function HomeScreen() {
               <View style={styles.settingRow}>
                 <ThemedText type="small">Engine Language</ThemedText>
                 <View style={styles.languageSelectors}>
-                  {['eng', 'spa', 'fra', 'deu'].map((lang) => (
+                  {['eng', 'ben', 'spa', 'fra', 'deu'].map((lang) => (
                     <TouchableOpacity
                       key={lang}
                       style={[
