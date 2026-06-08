@@ -19,6 +19,7 @@ import { useTheme } from '@/hooks/use-theme';
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
 import { Spacing } from '@/constants/theme';
+import { historyService } from '@/services/historyService';
 
 export default function HomeScreen() {
   const theme = useTheme();
@@ -129,13 +130,23 @@ export default function HomeScreen() {
     if (!selectedImage) return;
 
     try {
-      await recognize(selectedImage, {
+      const ocrResult = await recognize(selectedImage, {
         language: selectedLanguage,
         preprocess: {
           grayscale,
           contrast,
           binarize,
         },
+      });
+
+      // Save to history
+      await historyService.saveHistoryItem({
+        imageUri: selectedImage,
+        text: ocrResult.text,
+        confidence: ocrResult.confidence,
+        language: selectedLanguage,
+        processingTime: ocrResult.processingTime,
+        wordCount: ocrResult.words.length,
       });
     } catch (err) {
       console.error('OCR error during execution:', err);
